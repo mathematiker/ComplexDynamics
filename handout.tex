@@ -158,14 +158,23 @@ G(z)=\frac{P(z)-a}{(z-a)^k}\neq 0, z \neq a.
 \]
 $G$ besitzt keine Nullstellen und ist nach dem Fundamentalsatz damit konstant $G\equiv \lambda\neq 0$.
 
-Definiere im Folgenden $H(z):=\sqrt{\lambda}(z-a)$. Es ist leicht nachzurechnen, dass $Q\circ H=H\circ P$.
+Definiere im Folgenden $H(z):=\sqrt[n]{\lambda}(z-a)$. Es ist leicht nachzurechnen, dass $Q\circ H=H\circ P$.
 \end{proof}
 \begin{nt} \label{11}
 Für $Q(z)=z^n, n\ge 2$ folgt $J(Q)=S^1$. Außerdem ist $a=0$ exzeptioneller Punkt. 
 \end{nt}
 
 \begin{proof}
-Sei $z$ ein periodischer Punkt, so gilt mit $z=r\cdot e^{i\phi}$. \fixme
+Sei $z$ ein periodischer Punkt, so gilt mit $z=r\cdot e^{i\phi}$:
+\begin{align*}
+r^{mn}\cdot e^{\mathrm{i} mn \phi} &\iff r^{mn}=r\land mn \phi \equiv \phi \text{ mod } 2\pi\\ 
+&\iff (r=0\lor r=1) \land (mn-1)\phi \equiv 0 \text{ mod } 2\pi.\\ &\iff (r=0 \lor r=1)\land \phi=\frac{k}{mn-1} 2\pi, 0 \le k < nm-1, k \in \N_0.
+\end{align*}
+Alle periodischen Punkte mit Ausnahme der $0$ sind abstoßend, denn $|Q'(z)|=n|z|^{n-1}>1$. für $|z|=1$ und es folgt
+\[
+J(Q)=\overline{\{ z\in \C | \exists_{k,m \in \N, 1 \le k \le mn-1} z=e^{i\frac{k}{mn-1} 2\pi}\}}= S^1. \text{ (leicht zu zeigen)}
+\]
+Betrachte eine Umgebung $U$ um $z_0\in S^1$ mit $0\not\in U$, so folgt $0 \not\in \bigcup_{k=0}^\infty Q^k(U).$  
 \end{proof}
 
 
@@ -175,14 +184,45 @@ Sei $z$ ein periodischer Punkt, so gilt mit $z=r\cdot e^{i\phi}$. \fixme
 
 \begin{thm}[Koenigs Linearisationstheorem] \label{11}
 Sei $f$ eine analytische Funktion mit $f(0)=0$ und $f'(0)=\lambda$ mit 
-$|\lambda|\neq0,1$, dann existiert ein Diffeomorphismus $\phi: U\to V$ mit 
+$|\lambda|\not\in\{0,1\}$, dann existiert ein Diffeomorphismus $\phi: U\to V$ mit 
 $\phi(0)=0$, sodass 
-\[
-\phi \circ f(z)=\lambda\cdot \phi(z)
-\] 
-für $z\in U$, wobei $U$ und $V$ Umgebungen von $0$ sind. Dieses $\phi$ ist bis auf einen Multiplikation mit einer Konstanten eindeutig.
+\begin{align}
+\phi \circ f(z)=\lambda\cdot \phi(z)  \label{*}\tag{$*$}
+\end{align}
+für $z\in U$, wobei $U$ und $V$ Umgebungen von $0$ sind. Dieses $\phi$ ist bis auf Multiplikation mit einer Konstanten eindeutig.
 \end{thm}
 
+\begin{proof}
+\textbf{Eindeutigkeit:} Seien $\phi$ und $\psi$ analytische Funktionen die \eqref{*} erfüllen. Dann finden wir wegen Analyzität eine eindeutige Potenzreihendarstelung
+\[
+	\psi\circ \phi^{-1}(w)=\sum_{k=1}^\infty b_i w^i.
+\]
+Es folgt
+\[
+\lambda \psi(\phi^{-1}(w))\stackrel{\lambda \psi = \psi \circ f} = \psi \circ f \circ \phi^{-1}(w)=\psi \circ \phi^{-1}\circ \phi \circ f \circ \phi^{-1}(w)\stackrel{\phi \circ f \circ \phi^{-1}=\lambda \cdot}= \psi \circ \phi^{-1}(\lambda w).
+\]
+Und damit
+\[
+	\sum_{k=1}^\infty \lambda b_i w^i=\lambda \psi \circ \phi^{-1}(w)=\psi \circ \phi^{-1}(\lambda w)= \sum_{k=1}^\infty b_i \lambda^i w^i.
+\]
+Mit Eindeutigkeit der Potenzreihendarstellung folgt $\lambda b_n=b_n \lambda^n$ für alle $n\in \N$ und wegen $|\lambda|\not\in \{0,1\}$ folgt $b_n=0$ für $n\ge 2$. Insbesondere ist
+\[
+\psi\circ\phi^{-1}(w)=b_1 w\text{, bzw. } \phi(z)=b_1 \phi(z).
+\]
+\textbf{Existenz: Fall $0<|\lambda|<1$.} Wähle $c<1$, sodass $c^2<|\lambda|<c$. Wähle $r>0$, sodass $|f(z)| \le c|z|$. Induktiv folgt $|f^n(z)|\le c^n r$. Mit Taylor folgt die Existenz einer Konstanten $k>0$, sodass $|f(z)-\lambda z|\le k |z^2|, |z|<r$. Es ist $|f(z)|\le c |z|\le c r< r$. So folgt
+\[
+|f^{n+1}(z)-\lambda f^n(z)|=|f(f^n(z))-\lambda f^n(z)|\le k |f^n(z)|^2\stackrel{\text{s.o.}}\le k c^{2n} r^2.
+\]
+Sei $\eps>0$ beliebig. Für hinreichend große $m,n$ ist
+\begin{align*}
+	\Big|\frac{f^m(z)}{\lambda^m}-\frac{f^n(z)}{\lambda^n}\Big|&=\Bigg|\sum_{i=n}^{m-1} \frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^i}\Bigg| \\
+	&\le \sum_{i=n}^{m-1}\Big |\frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^k}\Big |\\ &\stackrel{\text{s.o.}}\le \underbrace{\frac{k r^2}{|\lambda|}}_{:=k'} \sum_{i=n}^{m-1} \Bigg(\frac{c^2}{|\lambda|} \Bigg)^i< \eps.
+\end{align*}
+Und mit dem Cauchy-Kriterium für gleichmäßige Konvergenz, folgt dass $\Bigg(\frac{f^n}{\lambda^n}\Bigg)_{n\in \N}$ gleichmäßig konvergiert mit holomorpher Grenzfunktion $\phi$. Dabei gilt
+\[
+\phi(f(z))=\lim_{n\to \infty}
+\] 
+\end{proof}
 
 \begin{prop}
 Sei $z_0$ ein anziehender periodischer Punkt bzgl. $f$, so existiert eine Umgebung $U$ um $z_0$, sodass $U\subset A(z_0)$. Wir nennen die Zusammenhangskomponente von $z_0\in A(z_0)$ auch das \emph{unmittelbare Einzugsgebiet}.
