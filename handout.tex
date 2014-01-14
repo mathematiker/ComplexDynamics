@@ -164,15 +164,15 @@ Definiere im Folgenden $H(z):=\sqrt[n]{\lambda}(z-a)$. Es ist leicht nachzurechn
 Für $Q(z)=z^n, n\ge 2$ folgt $J(Q)=S^1$. Außerdem ist $a=0$ exzeptioneller Punkt. 
 \end{nt}
 
-\begin{proof}
+\begin{proof}[Skizze:]
 Sei $z$ ein periodischer Punkt, so gilt mit $z=r\cdot e^{i\phi}$:
 \begin{align*}
 r^{mn}\cdot e^{\mathrm{i} mn \phi} &\iff r^{mn}=r\land mn \phi \equiv \phi \text{ mod } 2\pi\\ 
 &\iff (r=0\lor r=1) \land (mn-1)\phi \equiv 0 \text{ mod } 2\pi.\\ &\iff (r=0 \lor r=1)\land \phi=\frac{k}{mn-1} 2\pi, 0 \le k < nm-1, k \in \N_0.
 \end{align*}
-Alle periodischen Punkte mit Ausnahme der $0$ sind abstoßend, denn $|Q'(z)|=n|z|^{n-1}>1$. für $|z|=1$ und es folgt
+Alle periodischen Punkte mit Ausnahme der $0$ sind abstoßend, denn $|Q'(z)|=n|z|^{n-1}>1$ für $|z|=1$ und es folgt
 \[
-J(Q)=\overline{\{ z\in \C | \exists_{k,m \in \N, 1 \le k \le mn-1} z=e^{i\frac{k}{mn-1} 2\pi}\}}= S^1. \text{ (leicht zu zeigen)}
+J(Q)=\overline{\{ z\in \C | \exists_{k,m \in \N, 1 \le k \le mn-1} z=e^{i\frac{k}{mn-1} 2\pi}\}}= S^1.
 \]
 Betrachte eine Umgebung $U$ um $z_0\in S^1$ mit $0\not\in U$, so folgt $0 \not\in \bigcup_{k=0}^\infty Q^k(U).$  
 \end{proof}
@@ -182,7 +182,7 @@ Betrachte eine Umgebung $U$ um $z_0\in S^1$ mit $0\not\in U$, so folgt $0 \not\i
 
 \section{Periodische Punkte}
 
-\begin{thm}[Koenigs Linearisationstheorem] \label{11}
+\begin{thm}[Koenigs Linearisationstheorem] \label{12}
 Sei $f$ eine analytische Funktion mit $f(0)=0$ und $f'(0)=\lambda$ mit 
 $|\lambda|\not\in\{0,1\}$, dann existiert ein Diffeomorphismus $\phi: U\to V$ mit 
 $\phi(0)=0$, sodass 
@@ -220,24 +220,59 @@ Sei $\eps>0$ beliebig. Für hinreichend große $m,n$ ist
 \end{align*}
 Und mit dem Cauchy-Kriterium für gleichmäßige Konvergenz, folgt dass $\Bigg(\frac{f^n}{\lambda^n}\Bigg)_{n\in \N}$ gleichmäßig konvergiert mit holomorpher Grenzfunktion $\phi$. Dabei gilt
 \[
-\phi(f(z))=\lim_{n\to \infty}
+\phi(f(z))=\lim_{n\to \infty} \phi(f(z))=\lim_{n\to \infty} \frac{f^n(f(z))}{\lambda^n}= \lim_{n\to \infty} \lambda \underbrace{\frac{f^{n+1}(z)}{\lambda^{n+1}}}_{\to \phi(z)} = \lambda \phi(z).
 \] 
+Und es gilt
+\[
+\phi'(0)=\lim_{n\to \infty} \frac{(f^n)'(0)}{\lambda^n}\stackrel{\text{ind.}}= \lim_{n\to \infty} \frac{\prod_{i=0}^{n-1} f'(\overbrace{f^{i}(0)}^{=0})}{\lambda^n}= \lim_{n\to \infty} \frac{f'(0)^n}{\lambda^n}=1.
+\]
+Also folgt aus dem Satz von der inversen Abbildung, dass die Abbildung $\phi$ eine Umgebung von $0$ diffeomorph abbildet und $\phi\circ f= \lambda\cdot \phi$.
+
+\textbf{Fall $|\lambda|>1$.} Mit dem Satz von der Umkehrabbildung folgt, dass $f^{-1}$ lokal bei $z=0$ definiert ist, wobei
+\[
+|(f^{-1})'(0)|=\Bigg| \frac{1}{f'(f^{-1}(0))}\Bigg|= \frac{1}{|f'(0)|}=\lambda^{-1}.
+\]
+Mit obigem Argument folgt die Existenz von $\phi$ und einer Umgebung $U$ von 0 mit
+\[
+f^{-1}(z)=\phi^{-1}(\lambda^{-1}\phi(z)) \implies f(z)=\phi(\lambda \phi^{-1}(z)).
+\]
+für $z\in U$. Also gilt $\tilde \phi (f(z))=\lambda\cdot \tilde \phi(z)$, mit $\tilde \phi=\phi^{-1}$.
 \end{proof}
 
-\begin{prop}
-Sei $z_0$ ein anziehender periodischer Punkt bzgl. $f$, so existiert eine Umgebung $U$ um $z_0$, sodass $U\subset A(z_0)$. Wir nennen die Zusammenhangskomponente von $z_0\in A(z_0)$ auch das \emph{unmittelbare Einzugsgebiet}.
+\begin{prop} \label{13}
+Sei $z_0$ ein anziehender periodischer Punkt bzgl. einer analytischen Funktion $f$, so existiert eine (offene) Umgebung $U'$ um $z_0$, sodass $U'\subset A(z_0)$. Wir nennen die Zusammenhangskomponente von $z_0\in A(z_0)$ auch das \emph{unmittelbare Einzugsgebiet} von $z_0$ .
 \end{prop}
 
-
-\begin{lem}
-Sei $|a|<1$. Definiere
+\begin{proof} 
+Sei $z_0$ anziehender periodischer Punkt mit Periode $m$. 
+Setze $F(z):=f^m(z+z_0)-z_0$ für eine Umgebung von $0$. Offenbar gilt $F^n(z)=f^{nm}(z+z_0)-z_0$. Insbesondere ist $0$ anziehender Fixpunkt, denn 
 \[
-T_a(z):=\frac{z-a}{1-\bar a z}
+F^{n}(0)=\underbrace{f^{nm}(z_0)}_{=z_0}-z_0=0
+\] 
+mit $(F^{n})'(0)=(f^{mn})'(z_0)<1$. Nach Theorem~\ref{12} findet sich eine Umgebung $u$ von $0$ und eine Abbildung $\phi$, so dass $F(z)=\phi^{-1}(\lambda\phi(z))$ und damit
+\[
+	f^{nm}(z+z_0)-z_0=F^n(z)=\phi^{-1}(\lambda^n \phi(z))
 \]
-$T_a$ ist analytisch für $|z|<|a|^{-1}$. Desweiteren ist $T_a^{-1}=T_{-a}$, für $|z|<1$ und $T_a:\D\to \D$.
-\end{lem}
-\begin{thm}
+Und es folgt
+\[
+\lim_{n\to \infty} f^{nm}(\underbrace{z+z_0}_{=:z'})\stackrel{\text{s.o.}}= \lim_{n\to \infty} \phi^{-1}(\lambda^n \phi(z))+z_0\stackrel{\text{Stet.}}= \phi^{-1}\Big(\lim_{n\to \infty} \lambda^n \phi(z)\Big)+z_0=\phi^{-1}(0)+z_0=z_0.
+\]
+für $z'\in z_0+U:=U'$. Insbesondere gilt $U'\subset A(z_0)$.
+\end{proof}
+
+%\begin{lem}
+%Sei $|a|<1$. Definiere
+%\[
+%T_a(z):=\frac{z-a}{1-\bar a z}
+%\]
+%$T_a$ ist analytisch für $|z|<|a|^{-1}$. Desweiteren ist $T_a^{-1}=T_{-a}$, für $|z|<1$ und $T_a:\D\to \D$.
+%\end{lem}
+\begin{thm} \label{last}
 Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein anziehender periodischer Punkt von $P$. Dann liegt im Einzugsgebiet von $z_0$ ein kritischer Punkt.
 \end{thm}
+
+\begin{proof}
+Sei $U$ wie im Beweis von Proposition \ref{14} gewählt. \fixme
+\end{proof}
 
 \end{document}
