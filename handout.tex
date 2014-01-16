@@ -195,7 +195,7 @@ für $z\in U$, wobei $U$ und $V$ Umgebungen von $0$ sind. Dieses $\phi$ ist bis 
 \begin{proof}
 \textbf{Eindeutigkeit:} Seien $\phi$ und $\psi$ analytische Funktionen die \eqref{*} erfüllen. Dann finden wir wegen Analyzität eine eindeutige Potenzreihendarstelung
 \[
-	\psi\circ \phi^{-1}(w)=\sum_{k=1}^\infty b_i w^i.
+	\psi\circ \phi^{-1}(w)=\sum_{k=1}^\infty b_i w^i,\quad \psi\circ\phi^{-1}(0)=0.
 \]
 Es folgt
 \[
@@ -268,11 +268,34 @@ für $z'\in z_0+U:=U'$. Insbesondere gilt $U'\subset A(z_0)$.
 %$T_a$ ist analytisch für $|z|<|a|^{-1}$. Desweiteren ist $T_a^{-1}=T_{-a}$, für $|z|<1$ und $T_a:\D\to \D$.
 %\end{lem}
 \begin{thm} \label{last}
-Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein anziehender periodischer Punkt von $P$. Dann liegt im Einzugsgebiet von $z_0$ ein kritischer Punkt.
+Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein anziehender periodischer Punkt von $P$. Dann liegt im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt.
 \end{thm}
 
 \begin{proof}
-Sei $U$ wie im Beweis von Proposition \ref{14} gewählt. \fixme
+1) Setze $F(z)=P^m(z+z_0)-z_0$, wobei $m$ die Periode des periodischen Punkts $z_0$ von $P$ ist. Im Beweis zu Proposition~\ref{13} wurde bereits gezeigt dass $0$ ein anziehender Fixpunkt ist.  Es genügt zu zeigen, dass $F$ im Einzugsgebiet von $0$ einen krtischen Punkt besitzt, denn sei $F'(z_{\mathrm{crit}})=0$, so folgt
+\[
+	\prod_{k=0}^{m-1} P'(P^{k-1}(z_{\mathrm{crit}}+z_0))=0.
+\]
+Also finden wir ein $k\in \{0,...,m-1\}$ mit $P'(P^k(z_{\mathrm{crit}}+z_0))=0$.
+
+2) Angenommen $F'(0)=0$, dann sind wir fertig. Sei also $F'(0)\neq 0$. Wähle $r^*$, sodass $F(B_{r^*}(0))\subset B_{r^*}(0)$ injektiv und $B_{r*}(0)$ im Einzugsgebiet von $0$ liegt. Dies lässt sich so realisieren wegen dem Satz von der lokalen Umkehrabbildung und Proposition~\ref{13}. Setze nun $V:=F^{-1}(B_{r^*}(0))$. Dann wird $F$ als Abbildung von $V$ nach $U$ surjektiv.
+
+\textbf{Behauptung:} Falls $F$ keine kritischen Punkte in $B_{r^*}(0)$ besitzt, so besitzt $F$ eine analytische Umkehrabbildung $F^{-1}: B_{r^*}(0) \to U_1$, sodass $U_1\subset V$ ein Gebiet und $F^{-1}(0)=0$.
+
+\textbf{Beweis.} Nach Konstruktion existiert ein analytisches Inverse $F^{-1}: F(B_{r^*}(0)) \to B_{r^*}(0)$. Also können wir $F^{-1}$ in jede Richtung radial analytisch fortsetzen durch die lokale Umkehrfunktion. Dadurch erhalten wir eine analytische Abbildung $F^{-1}: B_{r^*}(0) \to U$. Es bleibt zu zeigen, dass $F^{-1}$ injektiv ist. Angenommen $F^{-1}(z_1)=F^{-1}(z_2)$. Dann ist $F(F^{-1}(z_1))=F(F^{-1}(z_2))$ und da $F^{-1}$ gerade lokal die Umkehrabbildung beschreibt auch $z_1=z_2$.
+
+3) Angenommen im Einzugsgebiet von $0$ bzgl. $F$ gibt es keine kritischen Punkte, so können wir $F^{-1}$ auf sukzessiv größer werdenden Gebieten definieren, die selbst wieder im Einzugsgebiet sind. Dabei gilt
+\[
+\bigcup_{k\in \N_0} F^{-k}(B_{r^*}(0))\subset \C\setminus \{z| |z|>R\}
+\] 
+für hinreichend großes $R>r^*$. Tatsächlich gilt für $R$  hinreichend groß $|F(z)| \ge |z|$ und insbesondere folgt damit auch $|F^n(z)|>R>r^*$ für alle $n\in \N$. 
+
+Nach Konstruktion gilt dabei 
+\[
+|(F^{-k})'(0)|=\Bigg|\frac{1}{(F^k)'(F^{-k}(0))} \Bigg|\stackrel{F^{-k}(0)=0}= \frac{1}{|(F^k)'(0)|}>1.
+\]
+Also ist $0$ ein abstoßender Fixpunkt bzgl. $F^{-1}$. Nach Korollar~\ref{9} gibt es aber höchstens einen exzeptionellen Punkt. Es ergibt sich der Widerspruch. Also finden wir im Einzugsgebiet von $0$ bzgl. $F$ einen kritischen Punkt. Mit dem vorigen Resultat ist dies äquivalent dazu, dass im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt zu finden ist.
+
 \end{proof}
 
 \end{document}
