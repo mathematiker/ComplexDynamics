@@ -282,7 +282,13 @@ Also finden wir ein $k\in \{0,...,m-1\}$ mit $P'(P^k(z_{\mathrm{crit}}+z_0))=0$.
 
 \textbf{Behauptung:} Falls $F$ keine kritischen Punkte in $B_{r^*}(0)$ besitzt, so besitzt $F$ eine analytische Umkehrabbildung $F^{-1}: B_{r^*}(0) \to U_1$, sodass $U_1\subset V$ ein Gebiet und $F^{-1}(0)=0$.
 
-\textbf{Beweis.} Nach Konstruktion existiert ein analytisches Inverse $F^{-1}: F(B_{r^*}(0)) \to B_{r^*}(0)$. Also können wir $F^{-1}$ in jede Richtung radial analytisch fortsetzen durch die lokale Umkehrfunktion. Dadurch erhalten wir eine analytische Abbildung $F^{-1}: B_{r^*}(0) \to U$. Es bleibt zu zeigen, dass $F^{-1}$ injektiv ist. Angenommen $F^{-1}(z_1)=F^{-1}(z_2)$. Dann ist $F(F^{-1}(z_1))=F(F^{-1}(z_2))$ und da $F^{-1}$ gerade lokal die Umkehrabbildung beschreibt auch $z_1=z_2$.
+\textbf{Beweis.} Nach Konstruktion existiert ein analytisches Inverse $F^{-1}: F(B_{r^*}(0)) \to B_{r^*}(0)$. Also können wir $F^{-1}$ in jede Richtung radial analytisch fortsetzen durch lokale Umkehrfunktionen. 
+
+\begin{tikzpicture}
+\draw (0,0) circle (.5) (1,.5) circle (.5) (2, 1) node {...}; 
+\end{tikzpicture}
+
+Dadurch erhalten wir eine analytische Abbildung $F^{-1}: B_{r^*}(0) \to U$. Es bleibt zu zeigen, dass $F^{-1}$ injektiv ist. Angenommen $F^{-1}(z_1)=F^{-1}(z_2)$. Dann ist $F(F^{-1}(z_1))=F(F^{-1}(z_2))$ und da $F^{-1}$ gerade lokal die Umkehrabbildung beschreibt auch $z_1=z_2$.
 
 3) Angenommen im Einzugsgebiet von $0$ bzgl. $F$ gibt es keine kritischen Punkte, so können wir $F^{-1}$ auf sukzessiv größer werdenden Gebieten definieren, die selbst wieder im Einzugsgebiet sind. Dabei gilt
 \[
