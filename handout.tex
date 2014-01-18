@@ -14,7 +14,7 @@
 
 Die Newtoniteration ist gegeben durch die Abbildung
 \[
-	\Phi(x)=z-\frac{f(z)}{f'(z)}
+	\Phi(x)=z-\frac{f(z)}{f'(z)}.
 \]
 Dabei ist für einen Startwert $z_0$ folgendes Verhalten denkbar
 \begin{itemize}
@@ -22,7 +22,7 @@ Dabei ist für einen Startwert $z_0$ folgendes Verhalten denkbar
 \item Die Newtoniteration konvergiert nicht.
 \end{itemize}
 
-Das Newton-Verfahren konvergiert lokal. Wie ist das Konvergenzverhalten außerhalb dieser Konvergenzumgebung? In Abbildung 1 wurde das Konvergenzverhalten für gegebene Startwerte durch unterschiedliche Farben hervorgehebt. Vergleichen wir zwei benachbarten Werte auf ihre Dynamik so stellen wir fest, dass es Punkte gibt in denen in keiner Umgebung alle Punkte diesselbe Dynamik besitzen.
+Das Newton-Verfahren konvergiert lokal. Wie ist das Konvergenzverhalten außerhalb dieser Konvergenzumgebung? In Abbildung 1 wurde das Konvergenzverhalten für gegebene Startwerte durch unterschiedliche Farben hervorgehebt. Vergleichen wir benachbarte Werte auf ihre Dynamik so stellen wir fest, dass es Punkte gibt in denen in keiner Umgebung alle Punkte diesselbe Dynamik besitzen.
 
 
 \begin{figure}[H]
@@ -34,7 +34,7 @@ Das Newton-Verfahren konvergiert lokal. Wie ist das Konvergenzverhalten außerha
 
 Dies motiviert das Konzept der \emph{Fatou-} bzw. \emph{Juliamenge}:
 \begin{description}
-\item[Fatou-Menge] Die Startwerte aus dieser Menge führen unter Iteration zu einer ,,stetigen`` Dynamik, das heißt, eine kleine Änderung des Startwert führt zu einer ähnlichen Dynamik.
+\item[Fatou-Menge] Die Startwerte aus dieser Menge führen unter Iteration zu einer ,,stetigen`` Dynamik, das heißt, dass eine kleine Änderung des Startwert zu einer ähnlichen Dynamik führt.
 \item[Julia-Menge] Beschreibt die Menge der Startpunkte, die zu den ,,instabilen`` Prozessen gehören. Jede noch so kleine Änderung des Startwerts führt zu einer komplett anderen Dynamik.
 \end{description} 
 Notation: $F(f)$ bezeichnet die Fatoumenge von $f$ und $J(f)$ analog die Juliamenge von $f$.
@@ -56,9 +56,9 @@ Sei $z_0$ periodischer Punkt bzgl. $f$ mit Periode n, d.h. $f^n(z_0)=z_0$. Dann 
 
 
 \begin{df}[Einzugsgebiet] \label{2}
-Ist $z_0$ ein anziehender periodischer Punkt von $f$ mit Periode $n$, dann ist die Menge
+Ist $z_0$ ein anziehender periodischer Punkt von $f$, dann ist die Menge
 \[
-	A_f(z_0)=\{z\in \overline{\mathbb{C}}: \lim\limits_{k\to \infty} f^{k\cdot n}(z)=z_0\}
+	A_f(z_0)=\{z\in \overline{\mathbb{C}}: \exists_{L\subset \N} \, \lim\limits_{L\ni k\to \infty} f^{k}(z)=z_0\}
 \]
 das \emph{Einzugsgebiet} (engl. \emph{basin of attraction}) von $z_0$ bzgl. $f$.
 \end{df}
@@ -88,11 +88,11 @@ Eine Familie $\{F_n\}$ analytischer Funktionen operiert \emph{nicht normal} bei 
 \begin{ex}\label{5}
 Betrachte die Funktion $F$, gegeben durch $F(x)=ax$. Definiere die Familie $\{F^n\}$.
 
-\textbf{Fall 1: $0<|a|<1$.} so konvergiert für jede kompakte Teilmenge die Funktionenfolge $F^n(z)=a^n\cdot z$ gleichmäßig gegen 0. In normal auf jeder Umgebung $U\subset \C$. 
+\textbf{Fall 1: $0<|a|<1$.} so konvergiert für jede kompakte Teilmenge die Funktionenfolge $F^n(z)=a^n\cdot z$ gleichmäßig gegen 0. Also operiert $\{F^n\}$ normal auf jeder Umgebung $U\subset \C$. 
 
 $\longrightarrow J(f)=\{\infty\}, F(f)=\mathbb{C}$, $A_F(0)=\C$, $A_F(\infty)=\{\infty\}$.
 
-\textbf{Fall 2: $|a|>1$.} Die Familie $\{F\}$ operiert nicht normal bei $0$, denn für $z\neq 0$ konvergiert jede beliebige Teilfolge gegen $\infty$. Nun konvergiert aber $F^{n_{i_j}}$ für beliebige Teilfolgen bei $z=0$ gegen $0$.
+\textbf{Fall 2: $|a|>1$.} Die Familie $\{F\}$ operiert nicht normal bei $0$, denn für $z\neq 0$ konvergiert jede beliebige Teilfolge gegen $\infty$. Nun konvergiert aber $F^{n_{i_j}}$ für beliebige Teilfolgen bei $z=0$ gleichmäßig gegen $0$.
 
 $\longrightarrow J(F)=\{0\}$, $F(f)=\overline{\C}\setminus \{0\}$, $A(0)=\{0\}$, $A(\infty)=\bar{\C}\setminus \{0\}$. 
 \end{ex}
@@ -204,10 +204,10 @@ Mit Eindeutigkeit der Potenzreihendarstellung folgt $\lambda b_n=b_n \lambda^n$ 
 |f^{n+1}(z)-\lambda f^n(z)|=|f(f^n(z))-\lambda f^n(z)|\le k |f^n(z)|^2\stackrel{\text{s.o.}}\le k c^{2n} r^2.
 \]
 Sei $\eps>0$ beliebig. Für hinreichend große $m,n$ ist
-\begin{align*}
-	\Big|\frac{f^m(z)}{\lambda^m}-\frac{f^n(z)}{\lambda^n}\Big|&=\Bigg|\sum_{i=n}^{m-1} \frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^i}\Bigg| \\
-	&\le \sum_{i=n}^{m-1}\Big |\frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^k}\Big |\\ &\stackrel{\text{s.o.}}\le \underbrace{\frac{k r^2}{|\lambda|}}_{:=k'} \sum_{i=n}^{m-1} \Bigg(\frac{c^2}{|\lambda|} \Bigg)^i< \eps.
-\end{align*}
+\[
+	\Big|\frac{f^m(z)}{\lambda^m}-\frac{f^n(z)}{\lambda^n}\Big|=\Bigg|\sum_{i=n}^{m-1} \frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^i}\Bigg|
+	\le \sum_{i=n}^{m-1}\Big |\frac{f^{i+1}(z)}{\lambda^{i+1}}-\frac{f^i(z)}{\lambda^k}\Big | \stackrel{\text{s.o.}}\le \underbrace{\frac{k r^2}{|\lambda|}}_{:=k'} \sum_{i=n}^{m-1} \Bigg(\frac{c^2}{|\lambda|} \Bigg)^i< \eps.
+\]
 Und mit dem Cauchy-Kriterium für gleichmäßige Konvergenz, folgt dass $\Big(\frac{f^n}{\lambda^n}\Big)_{n\in \N}$ gleichmäßig konvergiert mit holomorpher Grenzfunktion $\phi$. Dabei gilt
 \[
 \phi(f(z))=\lim_{n\to \infty} \phi(f(z))=\lim_{n\to \infty} \frac{f^n(f(z))}{\lambda^n}= \lim_{n\to \infty} \lambda \underbrace{\frac{f^{n+1}(z)}{\lambda^{n+1}}}_{\to \phi(z)} = \lambda \phi(z).
@@ -230,7 +230,7 @@ für $z\in U$. Also gilt $\tilde \phi (f(z))=\lambda\cdot \tilde \phi(z)$, mit $
 \end{proof}
 
 \begin{prop} \label{13}
-Sei $z_0$ ein anziehender periodischer Punkt bzgl. einer analytischen Funktion $f$, so existiert eine (offene) Umgebung $U$ um $z_0$, sodass $U\subset A_f(z_0)$. Wir nennen die Zusammenhangskomponente von $z_0\in A_f(z_0)$ auch das \emph{unmittelbare Einzugsgebiet} (engl. \emph{immediate basin of attraction}) von $z_0$ bzgl. $f$.
+Sei $z_0$ ein anziehender periodischer Punkt bzgl. einer analytischen Funktion $f$, so existiert eine Umgebung $U$ um $z_0$, sodass $U\subset A_f(z_0)$. Wir nennen die Zusammenhangskomponente von $z_0\in A_f(z_0)$ auch das \emph{unmittelbare Einzugsgebiet} (engl. \emph{immediate basin of attraction}) von $z_0$ bzgl. $f$.
 \end{prop}
 
 \begin{proof} 
@@ -259,14 +259,14 @@ für $z'\in z_0+U':=U$. Insbesondere gilt $U\subset A_f(z_0)$.
 %\end{lem}
 
 \begin{ex}
-Sei $P$ ein Polynom vom Grad $n\ge 2$, dann ist $\infty$ ein superanziehender Fixpunkt bzgl. $P$. Tatsächlich ist 
+Sei $P$ ein Polynom vom Grad $n\ge 2$, dann ist $\infty$ ein stark anziehender Fixpunkt bzgl. $P$. Tatsächlich ist 
 \[
 |P'(\infty)|=\lim_{z\to 0}\Bigg|\frac{\mathrm{d}}{\mathrm{d}z}\Bigg[\frac{1}{P(1/z)}\Bigg]\Bigg|=\lim_{z\to 0}\Bigg|\frac{P'(1/z)}{z^2 P(1/z)^2}\Bigg|=\lim_{z\to 0} |z|^{n+1} \Bigg|\frac{z^{n-1} P'(1/z)}{z^{2n-2}z^2 P(1/z)^2}\Bigg|=0.
 \]
 \end{ex}
 
 \begin{thm} \label{last}
-Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein (super-)anziehender periodischer Punkt von $P$. Dann liegt im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt.
+Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein (stark) anziehender periodischer Punkt von $P$. Dann liegt im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt.
 \end{thm}
 
 \begin{proof}
@@ -293,7 +293,7 @@ Also finden wir ein $k\in \{0,...,m-1\}$ mit $P'(P^k(z_{\mathrm{crit}}+z_0))=0$.
 \end{tikzpicture}
 \end{figure}
 
-Dadurch erhalten wir eine analytische Abbildung $F^{-1}: B_{r^*}(0) \to U$, die surjektiv ist. Diese ist mit dem Monodromielemma eindeutig bestimmt. Es bleibt zu zeigen, dass $F^{-1}$ injektiv ist. Angenommen $F^{-1}(z_1)=F^{-1}(z_2)$. Dann ist $F(F^{-1}(z_1))=F(F^{-1}(z_2))$ und da $F^{-1}$ gerade lokal die Umkehrabbildung beschreibt auch $z_1=z_2$.
+Dadurch erhalten wir eine analytische Abbildung $F^{-1}: B_{r^*}(0) \to U$, die surjektiv ist. Diese ist mit dem Monodromiesatz wohldefiniert. Es bleibt zu zeigen, dass $F^{-1}$ injektiv ist. Angenommen $F^{-1}(z_1)=F^{-1}(z_2)$. Dann ist $F(F^{-1}(z_1))=F(F^{-1}(z_2))$ und da $F^{-1}$ gerade lokal die Umkehrabbildung beschreibt auch $z_1=z_2$.
 
 3) Angenommen im Einzugsgebiet von $0$ bzgl. $F$ gibt es keine kritischen Punkte, so können wir $F^{-1}$ auf sukzessiv größer werdenden Gebieten definieren, die selbst wieder im Einzugsgebiet sind. Dabei gilt
 \[
@@ -305,8 +305,7 @@ Nach Konstruktion gilt dabei
 \[
 |(F^{-k})'(0)|=\Bigg|\frac{1}{(F^k)'(F^{-k}(0))} \Bigg|\stackrel{F^{-k}(0)=0}= \frac{1}{|(F^k)'(0)|}>1.
 \]
-Also ist $0$ ein abstoßender Fixpunkt bzgl. $F^{-1}$. Nach Korollar~\ref{9} gibt es aber höchstens einen exzeptionellen Punkt. Es ergibt sich der Widerspruch. Also finden wir im Einzugsgebiet von $0$ bzgl. $F$ einen kritischen Punkt. Mit dem vorigen Resultat ist dies äquivalent dazu, dass im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt zu finden ist.
-
+Also ist $0$ ein abstoßender Fixpunkt bzgl. $F^{-1}$. Nach Korollar~\ref{9} gibt es aber höchstens einen exzeptionellen Punkt. Es ergibt sich der Widerspruch. Also finden wir im Einzugsgebiet von $0$ bzgl. $F$ einen kritischen Punkt. Mit dem vorigen Resultat folgt, dass im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt zu finden ist.
 \end{proof}
 
 \end{document}
