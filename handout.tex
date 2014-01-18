@@ -261,7 +261,7 @@ für $z'\in z_0+U':=U$. Insbesondere gilt $U\subset A_f(z_0)$.
 \begin{ex}
 Sei $P$ ein Polynom vom Grad $n\ge 2$, dann ist $\infty$ ein stark anziehender Fixpunkt bzgl. $P$. Tatsächlich ist 
 \[
-|P'(\infty)|=\lim_{z\to 0}\Bigg|\frac{\mathrm{d}}{\mathrm{d}z}\Bigg[\frac{1}{P(1/z)}\Bigg]\Bigg|=\lim_{z\to 0}\Bigg|\frac{P'(1/z)}{z^2 P(1/z)^2}\Bigg|=\lim_{z\to 0} |z|^{n+1} \Bigg|\frac{z^{n-1} P'(1/z)}{z^{2n-2}z^2 P(1/z)^2}\Bigg|=0.
+|P'(\infty)|=\lim_{z\to 0}\Bigg|\frac{\mathrm{d}}{\mathrm{d}z}\Bigg[\frac{1}{P(1/z)}\Bigg]\Bigg|=\lim_{z\to 0}\Bigg|\frac{P'(1/z)}{z^2 P(1/z)^2}\Bigg|=\lim_{z\to 0} \underbrace{|z|^{n+1}}_{\to 0} \underbrace{\Bigg|\frac{z^{n-1} P'(1/z)}{z^{2n-2}z^2 P(1/z)^2}\Bigg|}_{\text{beschränkt}}=0.
 \]
 \end{ex}
 
