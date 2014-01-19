@@ -14,7 +14,7 @@
 
 Die Newtoniteration ist gegeben durch die Abbildung
 \[
-	\Phi(x)=z-\frac{f(z)}{f'(z)}.
+	\Phi(z)=z-\frac{f(z)}{f'(z)}.
 \]
 Dabei ist für einen Startwert $z_0$ folgendes Verhalten denkbar
 \begin{itemize}
@@ -105,7 +105,7 @@ Sei $F$ analytisch, $z_0$ ein abstoßender periodischer Punkt bzgl. $F$. Dann op
 \begin{proof}[Für Fixpunkte $z_0\in \C$]
  Angenommen $\{F^n\}$ operiert normal auf einer Umgebung $U$ von $z_0$. Für alle $n\in \N$ ist $F^n(z_0)=z_0$, also folgt insbesondere, dass $F^n$ nicht (gleichmäßig) gegen $\infty$ auf $U$ konvergiert. Also gibt es zu der Folge $(F^n)_{n\in \N}$ eine Teilfolge $(F^{n_i})_{i\in \N}$ die auf allen kompakten Teilmengen $K\subset U$ gleichmäßig konvergiert. Insbesondere ist die Grenzfunktion $G$ holomorph und es gilt $(F^{n_i})'(z_0) \to G'(z_0)$. Nun ist $z_0$ abstoßender Fixpunkt und damit folgt induktiv
  \[
- 	|(F^{n_i})'(z_0)|=(F^{n_i-1} \circ F)'(z_0)|=|(F^{n_i-1})'(\underbrace{F(z_0)}_{=z_0})|\cdot |F'(z_0)| \stackrel{\text{ind.}}{=} \underbrace{|F'(z_0)|}_{>1} \stackrel{n\to \infty}\to \infty.
+ 	|(F^{n_i})'(z_0)|=|(F^{n_i-1} \circ F)'(z_0)|=|(F^{n_i-1})'(\underbrace{F(z_0)}_{=z_0})|\cdot |F'(z_0)| \stackrel{\text{ind.}}{=} \underbrace{|F'(z_0)|}_{>1} \stackrel{n\to \infty}\to \infty.
  \]
  Es ergibt sich der Widerspruch zur Beschränktheit von $\Big((F^{n_i})'(z_0)\Big)_{i\in \N}$.
 \end{proof}
@@ -210,13 +210,13 @@ Sei $\eps>0$ beliebig. Für hinreichend große $m,n$ ist
 \]
 Und mit dem Cauchy-Kriterium für gleichmäßige Konvergenz, folgt dass $\Big(\frac{f^n}{\lambda^n}\Big)_{n\in \N}$ gleichmäßig konvergiert mit holomorpher Grenzfunktion $\phi$. Dabei gilt
 \[
-\phi(f(z))=\lim_{n\to \infty} \phi(f(z))=\lim_{n\to \infty} \frac{f^n(f(z))}{\lambda^n}= \lim_{n\to \infty} \lambda \underbrace{\frac{f^{n+1}(z)}{\lambda^{n+1}}}_{\to \phi(z)} = \lambda \phi(z).
+\phi(f(z))=\lim_{n\to \infty} \frac{f^n(f(z))}{\lambda^n}= \lim_{n\to \infty} \lambda \underbrace{\frac{f^{n+1}(z)}{\lambda^{n+1}}}_{\to \phi(z)} = \lambda \phi(z).
 \] 
 Und es gilt
 \[
 \phi'(0)=\lim_{n\to \infty} \frac{(f^n)'(0)}{\lambda^n}\stackrel{\text{ind.}}= \lim_{n\to \infty} \frac{\prod_{i=0}^{n-1} f'(f^{i}(0))}{\lambda^n}\stackrel{f^{i}(0)=0}= \lim_{n\to \infty} \frac{f'(0)^n}{\lambda^n}=1.
 \]
-Also folgt aus dem Satz von der inversen Abbildung, dass die Abbildung $\phi$ eine Umgebung von $0$ diffeomorph abbildet und $\phi\circ f= \lambda\cdot \phi$.
+Also folgt aus dem Satz von der Umkehrfunktion, dass die Abbildung $\phi$ eine Umgebung von $0$ diffeomorph abbildet und $\phi\circ f= \lambda\cdot \phi$.
 
 \textbf{Fall $|\lambda|>1$.} Mit dem Satz von der Umkehrabbildung folgt, dass $f^{-1}$ lokal bei $z=0$ definiert ist, wobei
 \[
@@ -276,7 +276,7 @@ Sei P ein Polynom vom Grad $n\ge 2$ und sei $z_0$ ein (stark) anziehender period
 \]
 Also finden wir ein $k\in \{0,...,m-1\}$ mit $P'(P^k(z_{\mathrm{crit}}+z_0))=0$.
 
-2) Angenommen $F'(0)=0$, dann sind wir fertig. Sei also $F'(0)\neq 0$. Wähle $r^*$, sodass $F(B_{r^*}(0))\subset B_{r^*}(0)$ injektiv und $B_{r*}(0)$ im Einzugsgebiet von $0$ bzgl. $F$ liegt. Dies lässt sich so realisieren wegen dem Satz von der lokalen Umkehrabbildung und Proposition~\ref{13}. Setze nun $V:=F^{-1}(B_{r^*}(0))$. Dann wird $F$ als Abbildung von $V$ nach $U$ surjektiv.
+2) Angenommen $F'(0)=0$, dann sind wir fertig. Sei also $F'(0)\neq 0$. Wähle $r^*>0$, sodass $F(B_{r^*}(0))\subset B_{r^*}(0)$ injektiv und $B_{r*}(0)$ im Einzugsgebiet von $0$ bzgl. $F$ liegt. Dies lässt sich so realisieren wegen dem Satz von der lokalen Umkehrabbildung und Proposition~\ref{13}. Setze nun $V:=F^{-1}(B_{r^*}(0))$. Dann wird $F$ als Abbildung von $V$ nach $U$ surjektiv.
 
 \textbf{Behauptung:} Falls $F$ keine kritischen Punkte in $B_{r^*}(0)$ besitzt, so besitzt $F$ eine analytische Umkehrabbildung $F^{-1}: B_{r^*}(0) \to U$, sodass $U\subset V$ ein einfach zusammenhängendes Gebiet und $F^{-1}(0)=0$.
 
@@ -307,5 +307,11 @@ Nach Konstruktion gilt dabei
 \]
 Also ist $0$ ein abstoßender Fixpunkt bzgl. $F^{-1}$. Nach Korollar~\ref{9} gibt es aber höchstens einen exzeptionellen Punkt. Es ergibt sich der Widerspruch. Also finden wir im Einzugsgebiet von $0$ bzgl. $F$ einen kritischen Punkt. Mit dem vorigen Resultat folgt, dass im Einzugsgebiet von $z_0$ bzgl. $P$ ein kritischer Punkt zu finden ist.
 \end{proof}
+\newpage
+\begin{thebibliography}{tief}
+\bibitem{1} Robert L. Devaney: {\it An Introduction to Chaotic Dynamical Systems}. Second Edition.
+                     Addison-Wesley Publishing Company, 1989.
+\bibitem{2} John Milnor: {\it Dynamics in one Complex Variable - Introductory Lectures}.  arXiv:math/9201272v1 [math.Ds], 20 April 1990.
+\end{thebibliography} 
 
 \end{document}

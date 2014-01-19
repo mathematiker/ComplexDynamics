@@ -69,7 +69,7 @@ tabsize=4, % Groesse von Tabs
 \frametitle{Motivation: das Newton-Verfahren}
 Die Newtoniteration ist gegeben durch die Abbildung
 \[
-	\Phi(x)=z-\frac{f(z)}{f'(z)}.
+	\Phi(z)=z-\frac{f(z)}{f'(z)}.
 \]
 Dabei ist für einen Startwert $z_0$ folgendes Verhalten denkbar
 \begin{itemize}
@@ -124,13 +124,12 @@ das \emph{Einzugsgebiet} (engl. \emph{basin of attraction}) von $z_0$ bzgl. $f$.
 \end{frame}
 
 \begin{frame}
-\begin{df} \label{4}
-Eine Familie $\{F_n\}$ analytischer Funktionen operiert \emph{normal} auf einer Umgebung $U$, falls jede Folge $(F_{n_i})_{i\in \mathbb{N}}$ eine Teilfolge $(F_{n_{i_j}})_{j\in \N}$ besitzt, sodass einer der beiden Eigenschaften erfüllt ist:
-\begin{itemize}
-\item $F_{n_{i_j}}$ konvergiert gleichmäßig auf kompakten Mengen $K\subset U$.
-\item $F_{n_{i_j}}$ konvergiert gleichmäßig gegen $\infty$ auf $U$.
-\end{itemize}
-Eine Familie $\{F_n\}$ analytischer Funktionen operiert \emph{nicht normal} bei $z_0$, falls er in keiner Umgebung \emph{normal} operiert.
+\begin{df}[Julia-Menge] \label{3}
+Wir definieren die Julia-Menge durch
+\[
+J(f):=\overline{\{z\in \overline{\mathbb{C}}: z \text{ abstossender periodischer Punkt von $f$} \}}
+\]
+Und die Fatou-Menge durch $F(f)=J(f)^c$
 \end{df}
 \end{frame}
 

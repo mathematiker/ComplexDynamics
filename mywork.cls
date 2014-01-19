@@ -59,6 +59,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{mathdots}
 \usepackage[hyperref,thmmarks]{ntheorem}			% Alternative theorems für leichteres Anpassen
 %\usepackage{tikz}
 
@@ -100,7 +101,7 @@
 
 % Deprecated: (use \theorempreskip instead)
 \theorempreskipamount 2.5em 						% Abstand vor Theorem
-\theoremindent 2ex 									% Theorem einrücken
+\theoremindent 1em									% Theorem einrücken
 \theoremheaderfont{\kern-1em\normalfont\bfseries} 	% Überschrift wieder ausrücken
 %\theoremheadertypefont{\color{green!25!black}}% Font für Theorem-Typ (Satz, Definition, etc.)
 \theorembodyfont{\normalfont} 						% Aufrecht statt kursiv im body-Teil
