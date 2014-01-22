@@ -92,7 +92,7 @@ Betrachte die Funktion $F$, gegeben durch $F(x)=ax$. Definiere die Familie $\{F^
 
 $\longrightarrow J(f)=\{\infty\}, F(f)=\mathbb{C}$, $A_F(0)=\C$, $A_F(\infty)=\{\infty\}$.
 
-\textbf{Fall 2: $|a|>1$.} Die Familie $\{F\}$ operiert nicht normal bei $0$, denn für $z\neq 0$ konvergiert jede beliebige Teilfolge gegen $\infty$. Nun konvergiert aber $F^{n_{i_j}}$ für beliebige Teilfolgen bei $z=0$ gleichmäßig gegen $0$.
+\textbf{Fall 2: $|a|>1$.} Die Familie $\{F\}$ operiert nicht normal bei $0$, denn für $z\neq 0$ konvergiert jede beliebige Teilfolge gegen $\infty$. Nun konvergiert aber $F^{n_{i_j}}$ für beliebige Teilfolgen bei $z=0$ gegen $0$.
 
 $\longrightarrow J(F)=\{0\}$, $F(f)=\overline{\C}\setminus \{0\}$, $A(0)=\{0\}$, $A(\infty)=\bar{\C}\setminus \{0\}$. 
 \end{ex}
@@ -224,9 +224,9 @@ Also folgt aus dem Satz von der Umkehrfunktion, dass die Abbildung $\phi$ eine U
 \]
 Mit obigem Argument folgt die Existenz von $\phi$ und einer Umgebung $U$ von 0 mit
 \[
-f^{-1}(z)=\phi^{-1}(\lambda^{-1}\phi(z)) \implies f(z)=\phi(\lambda \phi^{-1}(z)).
+f^{-1}(z)=\phi^{-1}(\lambda^{-1}\phi(z)) \implies f(z)=\phi^{-1}(\lambda \phi(z)).
 \]
-für $z\in U$. Also gilt $\tilde \phi (f(z))=\lambda\cdot \tilde \phi(z)$, mit $\tilde \phi=\phi^{-1}$.
+für $z\in U$. Also gilt $\phi (f(z))=\lambda\cdot \phi(z)$.
 \end{proof}
 
 \begin{prop} \label{13}
@@ -261,7 +261,7 @@ für $z'\in z_0+U':=U$. Insbesondere gilt $U\subset A_f(z_0)$.
 \begin{ex}
 Sei $P$ ein Polynom vom Grad $n\ge 2$, dann ist $\infty$ ein stark anziehender Fixpunkt bzgl. $P$. Tatsächlich ist 
 \[
-|P'(\infty)|=\lim_{z\to 0}\Bigg|\frac{\mathrm{d}}{\mathrm{d}z}\Bigg[\frac{1}{P(1/z)}\Bigg]\Bigg|=\lim_{z\to 0}\Bigg|\frac{P'(1/z)}{z^2 P(1/z)^2}\Bigg|=\lim_{z\to 0} \underbrace{|z|^{n+1}}_{\to 0} \underbrace{\Bigg|\frac{z^{n-1} P'(1/z)}{z^{2n-2}z^2 P(1/z)^2}\Bigg|}_{\text{beschränkt}}=0.
+|P'(\infty)|=\lim_{z\to 0}\Bigg|\frac{\mathrm{d}}{\mathrm{d}z}\Bigg[\frac{1}{P(1/z)}\Bigg]\Bigg|=\lim_{z\to 0}\Bigg|\frac{P'(1/z)}{z^2 P(1/z)^2}\Bigg|=\lim_{z\to 0} \underbrace{|z|^{n-1}}_{\to 0} \underbrace{\Bigg|\frac{z^{n-1} P'(1/z)}{z^{2n-2}z^2 P(1/z)^2}\Bigg|}_{\text{beschränkt}}=0.
 \]
 \end{ex}
 
